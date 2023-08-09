@@ -33,5 +33,13 @@ submit.value = "SEND";
 let item = document.querySelector(".list-group-item");
 item.style.color = "red";
 
-let lastItem = document.querySelector(".list-group-item:last-child");
-lastItem.style.color = "blue";
+// let lastItem = document.querySelector(".list-group-item:last-child");
+// lastItem.style.color = "blue";
+
+let secondItem = document.querySelector(".list-group-item:nth-child(2)");
+secondItem.style.color = "green";
+
+let thirdItem = document.querySelector(".list-group-item:nth-child(3)");
+// thirdItem.style.display = "none";
+// thirdItem.style.visibility = "hidden";
+thirdItem.hidden = true;
