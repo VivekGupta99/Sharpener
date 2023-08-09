@@ -15,10 +15,23 @@
 
 // header.style.borderBottom = "solid 5px black";
 
-var items = document.getElementsByClassName("list-group-item");
-console.log(items);
-console.log(items[2]);
+// var items = document.getElementsByClassName("list-group-item");
+// console.log(items);
+// console.log(items[2]);
 
 // items[2].style.fontWeight = "bold";
-items[1].style.backgroundColor = "pink";
+// // items[1].style.backgroundColor = "pink";
 // items[2].style.backgroundColor = "yellow";
+
+let input = document.querySelector("input");
+// by default first ko utha leta hai
+input.value = "Hello world";
+
+let submit = document.querySelector('input[type="submit"]');
+submit.value = "SEND";
+
+let item = document.querySelector(".list-group-item");
+item.style.color = "red";
+
+let lastItem = document.querySelector(".list-group-item:last-child");
+lastItem.style.color = "blue";
