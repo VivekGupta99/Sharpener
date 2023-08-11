@@ -23,16 +23,38 @@ document.getElementById("userForm").addEventListener("submit", (e) => {
         <strong>Email:</strong> ${user.email}, 
         <strong>Phone:</strong> ${user.phone}
   `;
-
+  // delete button
   let delButton = document.createElement("button");
   delButton.className = "deleteButton";
   delButton.appendChild(document.createTextNode("Delete"));
   li.appendChild(delButton);
   userList.appendChild(li);
 
+  //   edit button
+  let editButton = document.createElement("button");
+  editButton.className = "editButton";
+  editButton.appendChild(document.createTextNode("Edit"));
+  li.appendChild(editButton);
+  userList.appendChild(li);
+
   //deleting
   delButton.addEventListener("click", (e) => {
     localStorage.removeItem(`${email}`);
     userList.removeChild(li);
+  });
+
+  // Doing editing
+  editButton.addEventListener("click", (e) => {
+    // Retrieve user details from localStorage
+    let storedUser = JSON.parse(localStorage.getItem(`${email}`));
+
+    // Populate the form fields for editing
+    document.getElementById("userName").value = storedUser.name;
+    document.getElementById("userEmail").value = storedUser.email;
+    document.getElementById("userPhone").value = storedUser.phone;
+
+    // Remove user from localStorage and list
+    localStorage.removeItem(`${email}`);
+    // userList.removeChild(li);
   });
 });
